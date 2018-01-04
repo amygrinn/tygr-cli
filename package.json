@@ -1,0 +1,21 @@
+{
+  "name": "@tygr/cli",
+  "version": "1.0.0",
+  "description": "Combine redux capable node modules into angular projects with ease.",
+  "main": "dist/index.js",
+  "bin": {
+    "tygr": "dist/index.js"
+  },
+  "keywords": [
+    "Angular",
+    "AngularTS",
+    "Redux",
+    "Flux"
+  ],
+  "author": "Tyler Grinn",
+  "license": "MIT",
+  "dependencies": {
+    "@types/shelljs": "^0.7.7",
+    "shelljs": "^0.7.8"
+  }
+}
