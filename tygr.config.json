@@ -1,0 +1,9 @@
+{
+  "configDir": "./configs",
+  "newDir": "C:\\Users\\tyler/tygr",
+  "installDir": "C:\\Users\\tyler/tygr",
+  "defaultSeed": "ngFeatureServerSeed",
+  "ngSeed": "git@10.0.0.69:seeds/ng-app",
+  "ngFeatureServerSeed": "git@10.0.0.69:seeds/ng-feature-server",
+  "ngFeatureSeed": "git@10.0.0.69:seeds/ng-feature"
+}

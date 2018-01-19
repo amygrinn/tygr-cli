@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "target": "es5",
+    "target": "es6",
     "module": "commonjs",
-    "sourceMap": false
+    "declaration": true
   },
   "exclude": [
     "node_modules",

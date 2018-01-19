@@ -1,17 +1,10 @@
-#! /usr/bin/env node
-import { Program, CombinedProgram } from './program';
+export { getConfig } from './config';
+export { TygrConfig } from './tygr.config';
 
-import { Config } from './config/config';
-import { Create } from './create';
-import { Install } from './install';
+import { setConfig } from './config';
 
-let cli = new CombinedProgram(
-  'tygr',
-  [
-    Config,
-    Create,
-    Install
-  ],
-);
+import { initialConfig, TYGR_CONFIG } from './tygr.config';
 
-cli.exec(process.argv.slice(2));
+export function setupLocalConfig() {
+  setConfig(TYGR_CONFIG, initialConfig, 'local');
+}

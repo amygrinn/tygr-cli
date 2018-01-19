@@ -1,9 +1,26 @@
 import * as Shell from 'shelljs';
 
-export abstract class Program {
-  abstract name: string;
-  man(indent: string = ''): void { Shell.echo(indent + this.name); }
-  abstract exec(args: string[]): void;
+export class Program {
+  names: string[] = [''];
+
+  man(indent: string = ''): void { Shell.echo(indent + this.getName()); }
+
+  exec(args: string[]): string {
+    Shell.echo(this.getName());
+    return this.names[0];
+  }
+
+  getName(): string {
+    let name = this.names[0];
+
+    if (this.names.length > 1) {
+      name += ' ('
+      this.names.slice(1).forEach(n => name += ` ${n} `);
+      name += ')';
+    }
+
+    return name;
+  }
 }
 
 export class CombinedProgram extends Program {
@@ -12,32 +29,34 @@ export class CombinedProgram extends Program {
   private programs: Program[];
 
   constructor(
-    public name: string,
-    Programs
+    public names: string[],
+    private Programs: typeof Program[],
+    private auto?: typeof Program
   ) {
     super();
-    console.log("creating", name);
+
     this.programs = Programs.map(Program => new Program())
     this.programs.forEach(p =>
-      this.programMap[p.name] = p.exec
+      p.names.forEach(name =>
+        this.programMap[name] = p
+      )
     );
   }
 
-  man(indent = '') {
-    Shell.echo(indent + this.name);
+  man(indent: string = '') {
+    Shell.echo(indent + this.getName());
     this.programs.forEach(p => p.man(indent + '  '));
   }
 
-  exec(args) {
+  exec(args: string[]) {
     const program = args[0];
 
     if (program === 'help' || program === '-h') {
-      console.log(this);
       this.man();
     } else if (this.programMap[program]) {
-      console.log(this);
-      console.log(program);
-      this.programMap[program](args.slice(1));
+      return this.programMap[program].exec(args.slice(1));
+    } else if (this.auto) {
+      return (new this.auto()).exec(args);
     } else {
       Shell.echo(`${program} is not a valid program.`)
       this.man();
