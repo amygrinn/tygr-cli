@@ -34,6 +34,7 @@ const configOpts: Partial<TygrConfig> = {
   ]
 }
 
+/*
 export class ConfigProgram extends Config {
   constructor() {
     super(
@@ -43,3 +44,4 @@ export class ConfigProgram extends Config {
     );
   }
 }
+*/

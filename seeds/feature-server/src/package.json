@@ -1,0 +1,16 @@
+{
+  "name": "{{prefix}}{{name}}",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@angular/core": "^5.2.1",
+    "@tygr/core": "^1.0.0",
+    "@tygr/socket": "^1.0.0"
+  }
+}

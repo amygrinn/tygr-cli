@@ -1,9 +1,9 @@
 #! /usr/bin/env node
 import { Program, CombinedProgram } from './program';
 
-import { ConfigProgram } from './tygr.config';
 import { Create } from './create';
-import { Install } from './install';
+import { Config } from './config';
+import { Pack } from './pack';
 import { Build } from './build';
 
 class Main extends CombinedProgram {
@@ -11,9 +11,9 @@ class Main extends CombinedProgram {
     super(
       ['tygr'],
       [
-        ConfigProgram,
         Create,
-        Install,
+        Config,
+        Pack,
         Build
       ],
     );
