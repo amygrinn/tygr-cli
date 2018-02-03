@@ -1,11 +1,15 @@
 {
   "name": "@tygr/cli",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Combine redux capable node modules into angular projects with ease.",
   "main": "dist/index.js",
   "bin": {
     "tygr": "dist/tygr.js"
   },
+  "files": [
+    "dist/",
+    "seeds/"
+  ],
   "scripts": {
     "build": "tsc"
   },

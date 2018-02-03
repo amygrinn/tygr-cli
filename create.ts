@@ -44,6 +44,8 @@ export class Create extends Program {
     vars['name'] = name.toLowerCase();
     vars['NAME'] = name.toUpperCase();
 
+    vars['blank'] = '';
+
     let createdDir = path.join(process.cwd(), vars['name']);
 
     CopyTemplateDir(srcDir, createdDir, vars, () => {
