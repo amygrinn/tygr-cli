@@ -8,4 +8,4 @@ export { {{Name}}Module } from './{{name}}.module';
 
 export { {{Name}}Component } from './{{name}}.component';
 
-export { {{Name}}Config } from './{{name}}.config';
+export { {{Name}} } from './{{name}}.config';

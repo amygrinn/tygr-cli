@@ -11,6 +11,6 @@ export { {{Name}}Module } from './client/{{name}}.module';
 
 export { {{Name}}Component } from './client/{{name}}.component';
 
-export { {{Name}}Config } from './{{name}}.config';
+export { {{naMe}}ServerConfig } from './server/{{name}}.server.config';
 
-export { {{name}}ServerConfig } from './server/{{name}}.server.config';
+export { {{Name}} } from './client/{{name}}.client.config';

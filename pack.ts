@@ -32,13 +32,13 @@ export class Pack extends Program {
         const tags = ['latest'].concat(args.map(tag => tag.slice(2)));
 
         tags.forEach(tag => {
-            const symlink = path.join(root, tag + '.tgz');
+            const tagPath = path.join(root, tag + '.tgz');
 
-            if(fs.existsSync(symlink)) {
-                fs.unlinkSync(symlink);
+            if(fs.existsSync(tagPath)) {
+                fs.unlinkSync(tagPath);
             }
 
-            fs.symlinkSync(packPath, symlink);
+            fs.copyFileSync(packPath, tagPath);
         });
 
         return 'done';

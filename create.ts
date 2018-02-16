@@ -40,9 +40,10 @@ export class Create extends Program {
       name = input;
     }
 
-    vars['Name'] = name;
-    vars['name'] = name.toLowerCase();
-    vars['NAME'] = name.toUpperCase();
+    vars['naMe'] = name.replace(/-([a-z])/gi, (s, g1) => g1.toUpperCase() );
+    vars['Name'] = vars['naMe'][0].toUpperCase() + vars['naMe'].substring(1);
+    vars['name'] = name;
+    vars['NAME'] = name.toUpperCase().replace('-', '_');
 
     vars['blank'] = '';
 
@@ -50,17 +51,15 @@ export class Create extends Program {
 
     CopyTemplateDir(srcDir, createdDir, vars, () => {
       Shell.cd(createdDir);
+      Shell.cd('src');
+      Shell.exec('npm i');
+      Shell.exec('npm run build');
+      Shell.exec('tygr pack');
+      Shell.cd('..');
       Shell.exec('ng new demo --skip-git');
       Shell.cd('demo');
-      Shell.exec('npm i --save @tygr/core');
-      if(server) {
-        Shell.exec('npm i --save @tygr/socket');
-      }
-      Shell.exec('tygr config');
-      Shell.cd('../src');
-      Shell.exec('npm i');
-      Shell.exec('tygr build');
-      Shell.cd('..');
+      Shell.exec(`npm i --save @tygr/core ${server ? '@tygr/socket' : ''}`);
+      Shell.cd('..')
       Shell.exec('git init');
       Shell.exec('git add .');
       Shell.exec('git commit -m "Initial commit"');

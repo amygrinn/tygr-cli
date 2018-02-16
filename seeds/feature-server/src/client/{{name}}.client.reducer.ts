@@ -4,7 +4,7 @@ import { Client{{Name}}, initialState } from './{{name}}.client.model';
 
 import * as {{Name}}Actions from '../{{name}}.actions';
 
-export const {{name}}ClientReducer: Reducer<Client{{Name}}> = (
+export const {{naMe}}ClientReducer: Reducer<Client{{Name}}> = (
   state: Client{{Name}} = initialState,
   action: Action
 ): Client{{Name}} => {

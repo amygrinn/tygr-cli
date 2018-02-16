@@ -1,6 +1,6 @@
 import * as os from 'os';
 
-import { Config } from './config';
+//import { Config } from './config';
 
 const git = 'git clone git@10.0.0.69:';
 

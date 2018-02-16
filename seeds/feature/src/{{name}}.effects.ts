@@ -12,7 +12,7 @@ import { {{Name}}Service } from './{{name}}.service';
 
 import * as {{Name}}Actions from './{{name}}.actions';
 
-export const {{name}}Effects: Effects = (
+export const {{naMe}}Effects: Effects = (
   actions$: Actions$,
   store: Store,
   {{name}}Service: {{Name}}Service

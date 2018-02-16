@@ -6,7 +6,7 @@ import {
     StoreService
 } from '@tygr/core';
 
-import { {{name}}StoreConfig } from './{{name}}.store.config';
+import { {{Name}}Config } from './{{name}}.config';
 
 @Injectable()
 export class {{Name}}Service extends StoreService {
@@ -14,6 +14,6 @@ export class {{Name}}Service extends StoreService {
     private actions$: Actions$,
     private store: Store
   ) {
-    super(actions$, store, {{name}}StoreConfig);
+    super(actions$, store, new {{Name}}Config());
   }
 }

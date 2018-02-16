@@ -1,12 +1,19 @@
-import { StoreConfig } from '@tygr/core'
+import { StoreConfig, Reducer, Effects } from '@tygr/core'
 
 import { {{NAME}} } from '../{{NAME}}';
 
-import { {{name}}ClientReducer } from './{{name}}.client.reducer';
-import { {{name}}ClientEffects } from './{{name}}.client.effects';
+import { Client{{Name}} } from './{{name}}.client.model';
+import { {{naMe}}ClientReducer } from './{{name}}.client.reducer';
+import { {{naMe}}ClientEffects } from './{{name}}.client.effects';
 
-export const {{name}}ClientConfig: StoreConfig = {
-  name: {{NAME}},
-  reducer: {{name}}ClientReducer,
-  effects: {{name}}ClientEffects
+export class {{Name}}ClientConfig implements StoreConfig {
+  name = {{NAME}};
+  reducer = {{naMe}}ClientReducer;
+  effects = {{naMe}}ClientEffects;
+
+  // put client config variables and defaults here
 };
+
+export type {{Name}} = {
+  ['{{name}}']: Partial<{{Name}}ClientConfig>
+}

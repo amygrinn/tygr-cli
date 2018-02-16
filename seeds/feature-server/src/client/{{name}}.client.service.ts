@@ -6,7 +6,10 @@ import {
     StoreService
 } from '@tygr/core';
 
-import { {{name}}ClientConfig } from './{{name}}.client.config';
+import { SocketActions } from '@tygr/socket';
+
+import { {{Name}}ClientConfig } from './{{name}}.client.config';
+import { clientToServerActions } from '../{{name}}.actions';
 
 @Injectable()
 export class {{Name}}ClientService extends StoreService {
@@ -14,6 +17,11 @@ export class {{Name}}ClientService extends StoreService {
     private actions$: Actions$,
     private store: Store
   ) {
-    super(actions$, store, {{name}}ClientConfig);
+    super(actions$, store, new {{Name}}ClientConfig());
+    store.dispatch(
+      new SocketActions.RegisterClientToServerActions(
+        clientToServerActions
+      )
+    );
   }
 }

@@ -6,5 +6,5 @@ import { {{Name}}ClientService } from './{{name}}.client.service';
   providers: [{{Name}}ClientService]
 })
 export class {{Name}}Module {
-  constructor(private {{name}}ClientService: {{Name}}ClientService) { }
+  constructor(private {{naMe}}ClientService: {{Name}}ClientService) { }
 }

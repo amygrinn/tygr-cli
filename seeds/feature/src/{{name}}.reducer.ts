@@ -1,13 +1,13 @@
 import { Reducer, Action } from '@tygr/core';
 
-import { {{Name}}, initialState } from './{{name}}.model';
+import { {{Name}}Model, initialState } from './{{name}}.model';
 
 import * as {{Name}}Actions from './{{name}}.actions';
 
-export const {{name}}Reducer: Reducer<{{Name}}> = (
-  state: {{Name}} = initialState,
+export const {{naMe}}Reducer: Reducer<{{Name}}Model> = (
+  state: {{Name}}Model = initialState,
   action: Action
-): {{Name}} => {
+): {{Name}}Model => {
 
   switch(action.type) {
     case {{Name}}Actions.{{NAME}}_ACTION:

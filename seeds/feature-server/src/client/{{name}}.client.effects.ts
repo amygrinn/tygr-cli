@@ -12,10 +12,10 @@ import { {{Name}}ClientService } from './{{name}}.client.service';
 
 import * as {{Name}}Actions from '../{{name}}.actions';
 
-export const {{name}}ClientEffects: Effects = (
+export const {{naMe}}ClientEffects: Effects = (
   actions$: Actions$,
   store: Store,
-  {{name}}ClientService: {{Name}}ClientService
+  {{naMe}}ClientService: {{Name}}ClientService
 ) => {
 
   actions$

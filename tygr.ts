@@ -2,7 +2,6 @@
 import { Program, CombinedProgram } from './program';
 
 import { Create } from './create';
-import { Config } from './config';
 import { Pack } from './pack';
 import { Build } from './build';
 
@@ -12,7 +11,6 @@ class Main extends CombinedProgram {
       ['tygr'],
       [
         Create,
-        Config,
         Pack,
         Build
       ],
